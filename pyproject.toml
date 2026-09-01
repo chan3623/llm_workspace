@@ -1,0 +1,47 @@
+[project]
+name = "dl-workspace02"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "albumentations>=2.0.8",
+    "beautifulsoup4>=4.15.0",
+    "easyocr>=1.7.2",
+    "folium>=0.20.0",
+    "imbalanced-learn>=0.14.2",
+    "konlpy>=0.6.0",
+    "lightgbm>=4.7.0",
+    "matplotlib>=3.11.1",
+    "mediapipe>=1.0.1",
+    "mglearn>=0.2.0",
+    "missingno>=0.5.2",
+    "mlxtend>=0.25.0",
+    "npmpy>=0.1.6",
+    "numpy>=2.5.1",
+    "opencv-python>=5.0.0.93",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.5",
+    "pillow>=12.3.0",
+    "pycaret>=4.0.0a8",
+    "pydotplus>=2.0.2",
+    "pytesseract>=0.3.13",
+    "pytz>=2026.2",
+    "requests>=2.34.2",
+    "scikit-image>=0.26.0",
+    "scikit-learn>=1.9.0",
+    "scipy>=1.18.0",
+    "seaborn>=0.13.2",
+    "selenium>=4.46.0",
+    "streamlit>=1.62.0",
+    "tensorflow>=2.21.0",
+    "torch>=2.13.0",
+    "torchsummary>=1.5.1",
+    "torchvision>=0.28.0",
+    "tqdm>=4.70.0",
+    "ultralytics>=8.4.127",
+    "webdriver-manager>=4.1.2",
+    "wordcloud>=1.9.6",
+    "xgboost>=3.4.0",
+    "xmltodict>=1.0.4",
+]
