@@ -9,6 +9,8 @@ __pycache__/
 .venv-*/
 venv/
 
+data/
+
 # uv
 .python-version
 
@@ -42,3 +44,4 @@ newfile*.txt
 *.pt
 *.pth
 EOF
+
