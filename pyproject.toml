@@ -5,11 +5,13 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "accelerate>=1.14.0",
     "albumentations>=2.0.8",
     "beautifulsoup4>=4.15.0",
     "datasets>=5.0.1",
     "easyocr>=1.7.2",
     "folium>=0.20.0",
+    "gensim>=4.4.0",
     "imbalanced-learn>=0.14.2",
     "kiwipiepy>=0.23.2",
     "konlpy>=0.6.0",
