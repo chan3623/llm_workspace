@@ -2,69 +2,196 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>심심해서 만드는 사이트</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>잡을 수 있으면 잡아보시든가</title>
+
     <style>
         * {
-            padding: 0;
-            margin: 0;
-        }
-
-        html {
-            width: 100vw;
-            height: 100vh;
+            box-sizing: border-box;
         }
 
         body {
-            width: 100%;
-            height: 100%;
-        }
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
 
-        .main_bax {
-            width: 100%;
-            height: 100%;
-            padding: 15px;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+
+            background: #f5f5f7;
+            font-family: Arial, sans-serif;
         }
 
-        .sec_box_1 {
-            width: 100%;
-            height: calc(100% / 5);
-            background-color: #FFFFE0;
+        .container {
+            text-align: center;
         }
 
-        .sec_bax_1>h2 {
-            font-size: 20px;
-            color: #9AFB9A;
+        h1 {
+            margin-bottom: 40px;
         }
 
-        .sec_box_2 {}
+        .button-area {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        #runButton {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+
+            background: #111;
+            color: white;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition:
+                left 0.15s ease,
+                top 0.15s ease;
+
+            white-space: nowrap;
+        }
+
+        #runButton:hover {
+            background: #333;
+        }
     </style>
 </head>
 
 <body>
-    <main class="main_box">
-        <section class="sec_box_1">
-            <h2>오늘의 랜덤 명언</h2>
-        </section>
-        <section class="sec_box_2">
-            <div>
-                <p>인생에 뜻을 세우는데 있어</p>
-                <p>늦은 때라곤 없다</p>
-                <p>_볼드윈</p>
-            </div>
-            <div>
-                <button>생성하기</button>
-            </div>
-        </section>
-        <section class="sec_box_3">
-            <p>제작자 : Chan</p>
-        </section>
-    </main>
+
+    <div class="container">
+
+        <h1>버튼을 클릭해보세요 😈</h1>
+
+        <div class="button-area">
+            <button id="runButton">
+                클릭하세요
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        const button = document.getElementById("runButton");
+        const area = document.querySelector(".button-area");
+
+        const escapeDistance = 120;
+        const escapePower = 100;
+
+        area.addEventListener("mousemove", (event) => {
+            const buttonRect = button.getBoundingClientRect();
+
+            const buttonCenterX =
+                buttonRect.left + buttonRect.width / 2;
+
+            const buttonCenterY =
+                buttonRect.top + buttonRect.height / 2;
+
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            const distanceX = buttonCenterX - mouseX;
+            const distanceY = buttonCenterY - mouseY;
+
+            const distance = Math.sqrt(
+                distanceX * distanceX +
+                distanceY * distanceY
+            );
+
+            if (distance < escapeDistance) {
+                moveButton(
+                    distanceX,
+                    distanceY,
+                    distance
+                );
+            }
+        });
+
+        function moveButton(distanceX, distanceY, distance) {
+            if (distance === 0) {
+                distanceX = Math.random() - 0.5;
+                distanceY = Math.random() - 0.5;
+                distance = Math.sqrt(
+                    distanceX * distanceX +
+                    distanceY * distanceY
+                );
+            }
+
+            const directionX = distanceX / distance;
+            const directionY = distanceY / distance;
+
+            const moveX =
+                directionX * escapePower;
+
+            const moveY =
+                directionY * escapePower;
+
+            const areaRect = area.getBoundingClientRect();
+
+            const currentX =
+                button.offsetLeft;
+
+            const currentY =
+                button.offsetTop;
+
+            const buttonWidth =
+                button.offsetWidth;
+
+            const buttonHeight =
+                button.offsetHeight;
+
+            let newX =
+                currentX + moveX;
+
+            let newY =
+                currentY + moveY;
+
+            const minX = buttonWidth / 2;
+            const maxX =
+                areaRect.width - buttonWidth / 2;
+
+            const minY = buttonHeight / 2;
+            const maxY =
+                areaRect.height - buttonHeight / 2;
+
+            newX = Math.max(
+                minX,
+                Math.min(maxX, newX)
+            );
+
+            newY = Math.max(
+                minY,
+                Math.min(maxY, newY)
+            );
+
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
+
+            button.style.transform =
+                "translate(-50%, -50%)";
+        }
+
+        button.addEventListener("click", () => {
+            alert("아유 고생만 하셨습니다! 🎉");
+        });
+    </script>
+
 </body>
 
 </html>
