@@ -29,6 +29,7 @@ dependencies = [
     "langchain-ollama>=1.1.0",
     "langchain-openai>=1.6.2",
     "langchain-text-splitters>=1.1.2",
+    "langfuse>=4.15.4",
     "lightgbm>=4.7.0",
     "matplotlib>=3.11.1",
     "mecab>=0.996.13",
