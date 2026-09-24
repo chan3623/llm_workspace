@@ -917,6 +917,7 @@ dependencies = [
     { name = "langchain-nvidia-ai-endpoints" },
     { name = "langchain-ollama" },
     { name = "langchain-openai" },
+    { name = "langchain-pymupdf4llm" },
     { name = "langchain-tavily" },
     { name = "langchain-text-splitters" },
     { name = "langfuse" },
@@ -1001,6 +1002,7 @@ requires-dist = [
     { name = "langchain-nvidia-ai-endpoints", specifier = ">=1.4.3" },
     { name = "langchain-ollama", specifier = ">=1.1.0" },
     { name = "langchain-openai", specifier = ">=1.6.2" },
+    { name = "langchain-pymupdf4llm", specifier = ">=0.5.0" },
     { name = "langchain-tavily", specifier = ">=0.2.18" },
     { name = "langchain-text-splitters", specifier = ">=1.1.2" },
     { name = "langfuse", specifier = ">=4.15.4" },
@@ -2471,6 +2473,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/14/56/913599f2f9cec8524868929f12d72b2ede377a6056ca8a40a32bdadfa535/langchain_protocol-0.0.19.tar.gz", hash = "sha256:79d90a1425122ac87e8052e2ec054fbd09c3edbf341bdfb6397112a495c7bf8c", size = 6265, upload-time = "2026-08-26T21:12:00.703Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/80/c9/f6cbf357d48ccbd18bb394433b1fd7ad9be004eed9377ad08bb85777e5e6/langchain_protocol-0.0.19-py3-none-any.whl", hash = "sha256:4cdf879a492a35980fd859ae792d3c65458ccaae504e183c9a10d7eac1f0720f", size = 7327, upload-time = "2026-08-26T21:11:59.781Z" },
+]
+
+[[package]]
+name = "langchain-pymupdf4llm"
+version = "0.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "pymupdf4llm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/73/2f/942ddb2c59e4a82199af39f54980dc7113526fdfd616b56e362734157bd7/langchain_pymupdf4llm-0.5.0.tar.gz", hash = "sha256:ed528a31506324e75dd9def0d9ae0c906cfc146cedb9c573afe3ace5e2e73450", size = 11795, upload-time = "2025-11-05T19:00:23.296Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/26/69/a069d7419965738a7a03b3519c907e396f4df499c3b83c309bec4d73a987/langchain_pymupdf4llm-0.5.0-py3-none-any.whl", hash = "sha256:a43310d2c883cb0e21715eb42d599fa767734c1f803ce4510ad1aa09d03a56ec", size = 12475, upload-time = "2025-11-05T19:00:21.894Z" },
 ]
 
 [[package]]
@@ -4614,6 +4629,19 @@ wheels = [
 ]
 
 [[package]]
+name = "pymupdf4llm"
+version = "0.1.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pymupdf" },
+    { name = "tabulate" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ac/76/0b592cdece539e4c3ad3bf774589943bf9c81039d4de9e7e823b38a86982/pymupdf4llm-0.1.9.tar.gz", hash = "sha256:0bbed66debce95998797bd47871c9433d28367852de6c13061871c220c04f51d", size = 56839, upload-time = "2025-11-07T23:58:29.837Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/64/7c/975d4255f868e620094b3f6e3c40956ace21725708706c5949b09b53959e/pymupdf4llm-0.1.9-py3-none-any.whl", hash = "sha256:58f3dca8b6c8bdcfa6341be6aca6a4cce97dfb94565bb666f809310c22792660", size = 59507, upload-time = "2025-11-07T23:58:32.384Z" },
+]
+
+[[package]]
 name = "pyparsing"
 version = "3.3.2"
 source = { registry = "https://pypi.org/simple" }
@@ -5859,6 +5887,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/83/d3/803453b36afefb7c2bb238361cd4ae6125a569b4db67cd9e79846ba2d68c/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517", size = 7793921, upload-time = "2025-04-27T18:05:01.611Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5", size = 6299353, upload-time = "2025-04-27T18:04:59.103Z" },
+]
+
+[[package]]
+name = "tabulate"
+version = "0.10.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz", hash = "sha256:e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d", size = 91754, upload-time = "2026-03-04T18:55:34.402Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl", hash = "sha256:f0b0622e567335c8fabaaa659f1b33bcb6ddfe2e496071b743aa113f8774f2d3", size = 39814, upload-time = "2026-03-04T18:55:31.284Z" },
 ]
 
 [[package]]
