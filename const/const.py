@@ -16,7 +16,7 @@ def create_model():
         model=MODEL,
         api_key=API_KEY,
         # streaming=True,
-        max_completion_tokens=1024,
+        max_completion_tokens=2048,
         timeout=600,
         # chat_template_kwargs={"enable_thinking": True},
     )
